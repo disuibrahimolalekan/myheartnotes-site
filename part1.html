@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>My HeartNotes – Select Template</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Great+Vibes&family=Dancing+Script:wght@700&family=Pacifico&family=Caveat:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Pinyon+Script&family=Special+Elite&family=Shadows+Into+Light&family=Alex+Brush&family=Outfit:wght@400;700&family=Nunito:wght@300;400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+html, body { width: 100%; height: 100%; background: #f7f7f5; font-family: 'DM Sans', sans-serif; color: #111; overflow: hidden; }
+
+:root {
+  --coral: #FF5733;
+  --blue: #1B3FAB;
+  --gold: #F5C842;
+  --surface: #ffffff;
+  --bg: #f7f7f5;
+  --border: rgba(0,0,0,0.08);
+  --text-dim: #888;
+}
+
+/* ── HEADER ── */
+.header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  background: #f7f7f5;
+  padding: 52px 20px 14px;
+}
+.header-top {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 16px;
+}
+.back-btn {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: #fff; border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+}
+.back-btn:active { transform: scale(0.94); }
+.event-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #fff; border: 1px solid var(--border);
+  border-radius: 20px; padding: 6px 14px;
+  font-size: 13px; font-weight: 500; color: #111;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.header-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px; font-weight: 900; color: #111; line-height: 1.1;
+}
+.header-sub { font-size: 13px; color: var(--text-dim); margin-top: 3px; }
+
+/* ── GRID ── */
+.grid-wrap {
+  position: fixed; top: 160px; bottom: 0; left: 0; right: 0;
+  overflow-y: auto; padding: 4px 20px 40px;
+  -webkit-overflow-scrolling: touch;
+}
+.tpl-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tpl-card {
+  background: #fff; border-radius: 16px;
+  overflow: hidden; cursor: pointer;
+  border: 1.5px solid var(--border);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s;
+  aspect-ratio: 3/4; display: flex; flex-direction: column;
+  position: relative;
+}
+.tpl-card:active { transform: scale(0.96); box-shadow: 0 1px 6px rgba(0,0,0,0.08); }
+
+.tpl-preview { flex: 1; position: relative; overflow: hidden; }
+
+/* hide on mobile touch devices */
+::-webkit-scrollbar { display: none; }
+* { scrollbar-width: none; }
+
+/* show subtle scrollbar on desktop (mouse pointer) */
+@media (pointer: fine) {
+  ::-webkit-scrollbar { display: block; width: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.18); border-radius: 99px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.32); }
+  * { scrollbar-width: thin; scrollbar-color: rgba(0,0,0,0.18) transparent; }
+}
+
+.tpl-card { animation: fadeUp 0.4s ease both; }
+.tpl-card:nth-child(1)  { animation-delay: 0.04s; }
+.tpl-card:nth-child(2)  { animation-delay: 0.08s; }
+.tpl-card:nth-child(3)  { animation-delay: 0.12s; }
+.tpl-card:nth-child(4)  { animation-delay: 0.16s; }
+.tpl-card:nth-child(5)  { animation-delay: 0.20s; }
+.tpl-card:nth-child(6)  { animation-delay: 0.24s; }
+.tpl-card:nth-child(7)  { animation-delay: 0.28s; }
+.tpl-card:nth-child(8)  { animation-delay: 0.32s; }
+.tpl-card:nth-child(9)  { animation-delay: 0.36s; }
+.tpl-card:nth-child(10) { animation-delay: 0.40s; }
+.tpl-card:nth-child(11) { animation-delay: 0.44s; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <button class="back-btn" onclick="history.back()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <div class="event-pill" id="event-pill">🎂 Birthday</div>
+  </div>
+  <div class="header-title">Select Template</div>
+  <div class="header-sub">Choose a layout for your card</div>
+</div>
+
+<div class="grid-wrap">
+  <div class="tpl-grid" id="tpl-grid"></div>
+</div>
+
+<script>
+const FEMALE = 'https://i.ibb.co/B5x2Z8WT/1775698949892.png';
+const MALE   = 'https://i.ibb.co/sdjqndWS/IMG-20260409-024919-394.png';
+
+const EVENTS = {
+  birthday:    { emoji:'🎂',  label:'Birthday',    tag:'Happy Birthday',
+    theme: { paleBg:'#F7F4EF', darkBg:'#0F172A', accent:'#C9A84C', accentLight:'rgba(201,168,76,0.2)', darkText:'#4A3A2F', lightText:'#E2E8F0', altBg:'#EADDD1', cardBg:'#fff' }
+  },
+  anniversary: { emoji:'💍',  label:'Anniversary', tag:'Happy Anniversary',
+    theme: { paleBg:'#F4EAE6', darkBg:'#2B1515', accent:'#A74C4C', accentLight:'rgba(167,76,76,0.2)', darkText:'#5A4A45', lightText:'#F4EAE6', altBg:'#E8D8D3', cardBg:'#fff' }
+  },
+  graduation:  { emoji:'🎓',  label:'Graduation',  tag:'Congratulations',
+    theme: { paleBg:'#EAF4EC', darkBg:'#022118', accent:'#065F46', accentLight:'rgba(6,95,70,0.2)', darkText:'#224F34', lightText:'#EAF4EC', altBg:'#D1E5D8', cardBg:'#fff' }
+  },
+  wedding:     { emoji:'💐',  label:'Wedding',     tag:'Just Married',
+    theme: { paleBg:'#F4F0F9', darkBg:'#1F0B40', accent:'#4C1D95', accentLight:'rgba(76,29,149,0.2)', darkText:'#3A255A', lightText:'#F4F0F9', altBg:'#E2D8EF', cardBg:'#fff' }
+  },
+  newbaby:     { emoji:'👶',  label:'New Baby',    tag:'Welcome Baby',
+    theme: { paleBg:'#F0F6F9', darkBg:'#041B29', accent:'#3A8BBD', accentLight:'rgba(58,139,189,0.2)', darkText:'#2A4B63', lightText:'#F0F6F9', altBg:'#D3E6F2', cardBg:'#fff' }
+  },
+  valentines:  { emoji:'💕',  label:"Valentine's", tag:'To My Soulmate',
+    theme: { paleBg:'#FDF2F4', darkBg:'#3B0510', accent:'#E11D48', accentLight:'rgba(225,29,72,0.2)', darkText:'#70162B', lightText:'#FDF2F4', altBg:'#F6D2DB', cardBg:'#fff' }
+  },
+  promotion:   { emoji:'🏆',  label:'Promotion',   tag:'Congratulations',
+    theme: { paleBg:'#FDF9F2', darkBg:'#261102', accent:'#B45309', accentLight:'rgba(180,83,9,0.2)', darkText:'#663612', lightText:'#FDF9F2', altBg:'#EBD3BA', cardBg:'#fff' }
+  },
+  thankyou:    { emoji:'🙏',  label:'Thank You',   tag:'Thank You',
+    theme: { paleBg:'#F2F8F7', darkBg:'#031C1A', accent:'#0F766E', accentLight:'rgba(15,118,110,0.2)', darkText:'#234A47', lightText:'#F2F8F7', altBg:'#CDE6E3', cardBg:'#fff' }
+  }
+};
+
+const TEMPLATES = [
+  { id:1,  name:'Clean Minimal',      slots:'Text Only · 300 chars' },
+  { id:2,  name:'Vintage Stamp',      slots:'1 Photo · 150 chars' },
+  { id:3,  name:'Scrapbook',          slots:'2 Photos · 30 chars' },
+  { id:4,  name:'Vintage Postcard',   slots:'1 Photo · 150 chars' },
+  { id:5,  name:'Midnight',           slots:'1 Photo · 150 chars' },
+  { id:6,  name:'Glass',              slots:'Photo Background · 150 chars' },
+  { id:7,  name:'Circle Split',       slots:'1 Photo · 150 chars' },
+  { id:8,  name:'Polaroid Joy',       slots:'1 Photo · 150 chars' },
+  { id:9,  name:'The Letter',         slots:'Text Only · 300 chars' },
+  { id:10, name:'Vintage Extended',   slots:'1 Photo · 300 chars' },
+  { id:11, name:'Floral Extended',    slots:'1 Photo · 300 chars' }
+];
+
+let selectedEvent = null;
+
+function init() {
+  const stored = localStorage.getItem('selectedEvent');
+  selectedEvent = stored ? JSON.parse(stored) : { id:'birthday', emoji:'🎂', label:'Birthday' };
+  const ev = EVENTS[selectedEvent.id] || EVENTS.birthday;
+  ev.id = selectedEvent.id || 'birthday';
+  document.getElementById('event-pill').textContent = `${ev.emoji} ${ev.label}`;
+  renderGrid(ev);
+}
+
+function renderGrid(ev) {
+  document.getElementById('tpl-grid').innerHTML = TEMPLATES.map(t => `
+    <div class="tpl-card" onclick="selectTemplate(${t.id})">
+      <div class="tpl-preview">${getPreview(t.id, ev)}</div>
+    </div>
+  `).join('');
+}
+
+function getTplContent(tplId, ev) {
+  const evId = ev.id;
+
+  const tags = {
+    birthday:    { 1:ev.tag, 2:ev.tag, 3:ev.tag, 4:ev.tag, 5:ev.tag, 6:ev.tag, 7:ev.tag, 8:ev.tag, 9:ev.tag, 10:ev.tag, 11:ev.tag },
+    anniversary: { 1:ev.tag, 2:ev.tag, 3:ev.tag, 4:ev.tag, 5:ev.tag, 6:ev.tag, 7:ev.tag, 8:ev.tag, 9:ev.tag, 10:ev.tag, 11:ev.tag },
+    graduation:  { 1:'Congratulations', 2:'Congratulations', 3:'Congratulations', 4:'Congratulations', 5:'Congratulations', 6:'Congratulations', 7:'Congratulations', 8:'Congratulations', 9:'Congratulations', 10:'Congratulations', 11:'Congratulations' },
+    wedding:     { 1:'Just Married', 2:'Just Married', 3:'Just Married', 4:'Just Married', 5:'Just Married', 6:'Just Married', 7:'Just Married', 8:'Just Married', 9:'Just Married', 10:'Just Married', 11:'Just Married' },
+    newbaby:     { 1:'Welcome Baby', 2:'Welcome Baby', 3:'Welcome Baby', 4:'Welcome Baby', 5:'Welcome Baby', 6:'Welcome Baby', 7:'Welcome Baby', 8:'Welcome Baby', 9:'Welcome Baby', 10:'Welcome Baby', 11:'Welcome Baby' },
+    promotion:   { 1:'Congratulations', 2:'Congratulations', 3:'Congratulations', 4:'Congratulations', 5:'Congratulations', 6:'Congratulations', 7:'Congratulations', 8:'Congratulations', 9:'Congratulations', 10:'Congratulations', 11:'Congratulations' },
+    thankyou:    { 1:'Thank You', 2:'So Grateful', 3:'I Appreciate You', 4:'Forever Grateful', 5:'Thank You', 6:'So Grateful', 7:'I Appreciate You', 8:'Forever Grateful', 9:'Thank You', 10:'So Grateful', 11:'I Appreciate You' },
+    valentines:  { 1:'To My Soulmate', 2:'To My Soulmate', 3:'To My Soulmate', 4:'To My Soulmate', 5:'To My Soulmate', 6:'To My Soulmate', 7:'To My Soulmate', 8:'To My Soulmate', 9:'To My Soulmate', 10:'To My Soulmate', 11:'To My Soulmate' }
+  };
+
+  const texts = {
+    birthday: {
+      1: "Wishing you the happiest of birthdays! May this year bring you endless joy...",
+      2: "Happy Birthday! Sending you so much love and the biggest hugs today!",
+      3: "A lifetime of beautiful memories. Wishing you an amazing birthday!",
+      4: "Hope your birthday is filled with sunshine, laughter, and all your favorite things.",
+      5: "Happy birthday to someone who brightens every day. Have the best one yet!",
+      6: "Wishing you an incredibly happy birthday surrounded by friends!",
+      7: "Cheers to another year of life! Have a fantastic birthday filled with love.",
+      8: "May your birthday bring you happiness and beautiful memories!",
+      9: "Wishing you the best birthday ever! You make ordinary moments magical...",
+      10: "Happy birthday! Here's to celebrating all the amazing things that make you special. I hope your day is filled with everything you love the most.",
+      11: "Wishing you the absolute best birthday! It is such a joy to celebrate you today and everything you bring to our lives."
+    },
+    valentines: {
+      1: "Sending you all my love today and always. Happy Valentine's Day...",
+      2: "Delivered with all my heart on this special Valentine's Day!",
+      3: "A lifetime of beautiful memories together. Happy Valentine's Day!",
+      4: "Hope your day is filled with romance, kisses, and everything sweet.",
+      5: "Happy Valentine's Day to my favorite person. I love you so much!",
+      6: "Wishing you a beautiful Valentine's Day filled with so much love!",
+      7: "Cheers to us and our beautiful journey. Happy Valentine's Day!",
+      8: "May this special day bring you endless love and happiness!",
+      9: "Happy Valentine's Day! My heart belongs to you completely...",
+      10: "Happy Valentine's Day! Here's to us, to love, and to all the moments that make my heart skip a beat.",
+      11: "Wishing you the most romantic Valentine's Day! You mean everything to me and I cherish every moment with you."
+    },
+    anniversary: {
+      1: "Happy Anniversary! Here is to another year of love and laughter...",
+      2: "Delivered with so much love on our special anniversary!",
+      3: "A lifetime of beautiful memories. Happy Anniversary to us!",
+      4: "Hope our special day is filled with romance and wonderful moments.",
+      5: "Happy Anniversary! I love you more and more every single day.",
+      6: "Wishing you the happiest anniversary filled with nothing but love!",
+      7: "Cheers to another year of our beautiful journey together.",
+      8: "May our anniversary bring us even more happiness and beautiful memories!",
+      9: "Happy Anniversary! You make every ordinary moment feel completely magical...",
+      10: "Happy Anniversary! Here is to celebrating our love and everything that makes us special. I cherish you deeply.",
+      11: "Wishing us the absolute best anniversary! It is such a joy to build this incredible life together with you."
+    },
+    graduation: {
+      1: "Congratulations on your graduation! So proud of your amazing journey...",
+      2: "Delivered with immense pride on your big graduation day!",
+      3: "A lifetime of beautiful memories. Happy Graduation!",
+      4: "Hope your future is filled with immense success and bright opportunities.",
+      5: "Congratulations to someone who works so hard. You did it!",
+      6: "Wishing you an incredibly joyous graduation surrounded by friends!",
+      7: "Cheers to your success and all your hard work! Congratulations.",
+      8: "May this graduation bring you endless pride and bright futures!",
+      9: "Huge congratulations! Your dedication makes everything magical...",
+      10: "Congratulations! Here is to celebrating all your hard work and achievements. Your future is incredibly bright.",
+      11: "We are so incredibly proud of you! It is a joy to celebrate your graduation and all the amazing things you will do."
+    },
+    wedding: {
+      1: "Wishing you beautiful moments and a lifetime of love together...",
+      2: "Delivered with joy on your beautiful wedding day!",
+      3: "A lifetime of beautiful memories. Congratulations to the newlyweds!",
+      4: "Hope your marriage is filled with sunshine, laughter, and love.",
+      5: "Happy Wedding Day! May your love grow stronger every day.",
+      6: "Wishing you an incredibly beautiful wedding surrounded by loved ones!",
+      7: "Cheers to your new journey together! Have a fantastic wedding.",
+      8: "May your wedding bring you endless happiness and beautiful memories!",
+      9: "Congratulations! Your love story makes the ordinary magical...",
+      10: "Congratulations on your wedding! Here is to celebrating your love and all the amazing things your future holds together.",
+      11: "Wishing you the absolute best on your wedding day! It is such a joy to celebrate your beautiful union today."
+    },
+    newbaby: {
+      1: "Welcome to the world! Wishing your family endless joy...",
+      2: "Delivered with so much love to the newest member of the family!",
+      3: "A lifetime of beautiful memories. Welcome sweet little baby!",
+      4: "Hope your new arrival fills your home with sunshine and laughter.",
+      5: "Welcome baby! So happy for your growing family.",
+      6: "Wishing you an incredibly joyous time with your new little one!",
+      7: "Cheers to your beautiful new baby! Sending lots of love.",
+      8: "May this new baby bring your family endless happiness!",
+      9: "Welcome little one! You make the world more magical...",
+      10: "Congratulations on your new baby! Here is to celebrating this beautiful new chapter and all the precious moments ahead.",
+      11: "Wishing your growing family the absolute best! It is such a joy to welcome your beautiful new baby to the world."
+    },
+    promotion: {
+      1: "Congratulations on your promotion! Wishing you continued success...",
+      2: "Delivered with huge congratulations on your amazing promotion!",
+      3: "A lifetime of beautiful achievements. So proud of you!",
+      4: "Hope your new role brings you immense success and excitement.",
+      5: "Massive congratulations! You truly deserve this promotion.",
+      6: "Wishing you an incredibly joyous celebration for your hard work!",
+      7: "Cheers to your new role and reaching new heights!",
+      8: "May this promotion bring you endless pride and new goals!",
+      9: "Congratulations! Your impressive dedication is truly magical...",
+      10: "Congratulations on the promotion! Here is to celebrating your skills and the amazing things you will achieve next.",
+      11: "Wishing you the absolute best in your new position! It is such a joy to celebrate your incredible professional success."
+    },
+    thankyou: {
+      1: "Sending my deepest thanks! Your kindness means the world to me...",
+      2: "Delivered with so much gratitude and warmest hugs!",
+      3: "A lifetime of beautiful memories. Thank you so much!",
+      4: "Hope this little message brings you as much joy as you gave me.",
+      5: "Thank you to someone who brightens every day. I appreciate you!",
+      6: "Wishing you nothing but the best! Thank you for everything.",
+      7: "Cheers to your wonderful heart! Thanks a million for your help.",
+      8: "May your kindness bring you endless happiness in return!",
+      9: "Thank you so much! Your generosity makes the ordinary magical...",
+      10: "Thank you from the bottom of my heart! Here is to celebrating your wonderful spirit and everything you do for others.",
+      11: "Sending you the absolute best! It is such a joy to know you and I cannot thank you enough for all your kind support."
+    }
+  };
+
+  const txtPool = texts[evId] || texts['birthday'];
+  const txt = txtPool[tplId] || txtPool[1];
+  const tagPool = tags[evId] || tags['birthday'];
+  const tag = tagPool[tplId] || tagPool[1] || ev.tag;
+
+  return { tag, txt };
+}
+
+function getPreview(id, ev) {
+  const th = ev.theme;
+  const { tag, txt } = getTplContent(id, ev);
+
+  // ── T1: CLEAN MINIMAL TEXT ONLY ─────────────────────────────
+  if (id === 1) return `
+    <div style="width:100%;height:100%;background:${th.paleBg};display:flex;flex-direction:column;justify-content:center;padding:16px 14px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,${th.accent},${th.paleBg},${th.accent});"></div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,${th.accent},${th.paleBg},${th.accent});"></div>
+      <div style="position:absolute;top:8px;left:8px;width:12px;height:12px;border-top:1px solid ${th.accent};border-left:1px solid ${th.accent};opacity:0.6;"></div>
+      <div style="position:absolute;top:8px;right:8px;width:12px;height:12px;border-top:1px solid ${th.accent};border-right:1px solid ${th.accent};opacity:0.6;"></div>
+      <div style="position:absolute;bottom:8px;left:8px;width:12px;height:12px;border-bottom:1px solid ${th.accent};border-left:1px solid ${th.accent};opacity:0.6;"></div>
+      <div style="position:absolute;bottom:8px;right:8px;width:12px;height:12px;border-bottom:1px solid ${th.accent};border-right:1px solid ${th.accent};opacity:0.6;"></div>
+      <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;font-style:italic;color:${th.darkText};line-height:1.2;margin-bottom:10px;">${tag}</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:9px;font-style:italic;color:${th.darkText};line-height:1.8;opacity:0.8;">${txt}</div>
+      <div style="font-family:'Great Vibes',cursive;font-size:14px;color:${th.accent};margin-top:10px;text-align:right;">— With Love</div>
+    </div>`;
+
+  // ── T2: VINTAGE STAMP ───────────────────────────────────────
+  if (id === 2) return `
+    <div style="width:100%;height:100%;background:${th.paleBg};padding:10px;display:flex;flex-direction:column;border:1px solid ${th.accentLight};position:relative;overflow:hidden;">
+      <svg style="position:absolute;top:8px;right:8px;width:32px;height:32px;stroke:${th.accent};stroke-width:1.5;fill:none;opacity:0.7;z-index:3;" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" stroke-dasharray="4 4"/><path d="M30,50 L50,70 L80,30" stroke-width="4"/></svg>
+      <div style="width:100%;height:52%;border:4px solid ${th.cardBg};box-shadow:0 2px 6px rgba(0,0,0,0.1);margin-bottom:10px;overflow:hidden;flex-shrink:0;">
+        <img src="${FEMALE}" style="width:100%;height:100%;object-fit:cover;object-position:top;filter:contrast(1.1) sepia(0.2);display:block;"/>
+      </div>
+      <div style="font-family:'Caveat',cursive;font-size:18px;color:${th.accent};line-height:1;margin-bottom:4px;">${tag}</div>
+      <div style="font-family:'Special Elite',monospace;font-size:8px;color:${th.darkText};line-height:1.5;">${txt}</div>
+    </div>`;
+
+  // ── T3: SCRAPBOOK SIDE BY SIDE ──────────────────────────────
+  if (id === 3) return `
+    <div style="width:100%;height:100%;background:${th.altBg};padding:10px;border:1px solid ${th.accentLight};position:relative;overflow:hidden;">
+      <div style="position:absolute;width:40px;height:12px;background:rgba(255,255,255,0.4);top:6px;left:50%;transform:translateX(-50%) rotate(-2deg);z-index:4;box-shadow:0 1px 2px rgba(0,0,0,0.08);"></div>
+      <div style="display:flex;flex-direction:row;justify-content:center;align-items:flex-start;gap:6px;width:100%;margin-top:16px;height:54%;z-index:2;">
+        <div style="width:46%;height:100%;border:4px solid ${th.cardBg};box-shadow:0 2px 6px rgba(0,0,0,0.1);transform:rotate(-4deg);filter:sepia(0.3);overflow:hidden;flex-shrink:0;">
+          <img src="${FEMALE}" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"/>
+        </div>
+        <div style="width:46%;height:100%;border:4px solid ${th.cardBg};box-shadow:0 2px 6px rgba(0,0,0,0.1);transform:rotate(4deg);filter:sepia(0.3);overflow:hidden;flex-shrink:0;margin-top:10px;">
+          <img src="${MALE}" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"/>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:22px;left:0;width:100%;text-align:center;z-index:5;padding:0 8px;">
+        <div style="font-family:'Dancing Script',cursive;font-size:${ev.id==='anniversary'?'17px':'20px'};font-weight:700;color:${th.darkText};line-height:1;margin-bottom:4px;${ev.id==='anniversary'?'white-space:nowrap;overflow:hidden;text-overflow:ellipsis;':''}">${tag}</div>
+        <div style="font-family:'Special Elite',monospace;font-size:7px;color:${th.darkText};line-height:1.4;opacity:0.8;">${txt}</div>
+      </div>
+    </div>`;
+
+  // ── T4: VINTAGE POSTCARD ────────────────────────────────────
+  if (id === 4) return `
+    <div style="width:100%;height:100%;background:${th.paleBg};padding:8px;border:1px solid ${th.accentLight};display:flex;flex-direction:column;position:relative;overflow:hidden;">
+      <svg style="position:absolute;top:8px;right:8px;width:32px;height:32px;stroke:${th.accent};stroke-width:1.5;fill:none;opacity:0.6;z-index:2;" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45"/><circle cx="50" cy="50" r="35" stroke-dasharray="4 4"/><text x="50" y="55" font-family="sans-serif" font-size="18" text-anchor="middle" fill="${th.accent}" stroke="none">1924</text></svg>
+      <div style="width:100%;height:100px;border:3px solid ${th.cardBg};box-shadow:0 1px 5px rgba(0,0,0,0.1);margin-bottom:8px;overflow:hidden;flex-shrink:0;">
+        <img src="${MALE}" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"/>
+      </div>
+      <div style="font-family:'Shadows Into Light',cursive;font-size:15px;color:${th.darkText};margin-bottom:4px;">${tag}</div>
+      <div style="font-family:'Special Elite',monospace;font-size:8px;color:${th.darkText};line-height:1.5;opacity:0.8;">${txt}</div>
+    </div>`;
+
+  // ── T5: MIDNIGHT DARK ARCH ──────────────────────────────────
+  if (id === 5) return `
+    <div style="width:100%;height:100%;background:${th.darkBg};padding:16px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden;">
+      <div style="width:80px;height:100px;border-radius:60px 60px 0 0;overflow:hidden;border:1.5px solid ${th.lightText};margin-bottom:14px;flex-shrink:0;">
+        <img src="${FEMALE}" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"/>
+      </div>
+      <div style="font-family:'Playfair Display',serif;font-size:${ev.id==='anniversary'?'13px':'16px'};font-weight:600;font-style:italic;color:${th.lightText};margin-bottom:8px;line-height:1.2;">${tag}</div>
+      <div style="font-size:9px;line-height:1.6;color:${th.lightText};opacity:0.7;font-weight:300;">${txt}</div>
+    </div>`;
+
+  // ── T6: GLASSMORPHISM ───────────────────────────────────────
+  if (id === 6) return `
+    <div style="width:100%;height:100%;position:relative;overflow:hidden;display:flex;align-items:flex-end;">
+      <div style="position:absolute;inset:0;">
+        <img src="${FEMALE}" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"/>
+        <div style="position:absolute;inset:0;background:rgba(0,0,0,0.28);"></div>
+      </div>
+      <div style="position:relative;z-index:2;margin:8px;background:rgba(255,255,255,0.18);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.38);border-radius:8px;padding:8px;width:calc(100% - 16px);color:#fff;">
+        <div style="font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;margin-bottom:3px;">${tag}</div>
+        <div style="font-size:7px;line-height:1.4;opacity:0.9;">${txt}</div>
+      </div>
+    </div>`;
+
+  // ── T7: CIRCLE SPLIT ────────────────────────────────────────
+  if (id === 7) return `
+    <div style="width:100%;height:100%;background:${th.paleBg};display:flex;flex-direction:column;align-items:center;padding:14px 12px;overflow:hidden;">
+      <div style="position:relative;width:90%;height:42%;flex-shrink:0;">
+        <div style="width:100%;height:100%;overflow:hidden;background:#eee;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+          <img src="${MALE}" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"/>
+        </div>
+        <div style="position:absolute;top:-8px;right:-8px;width:18px;height:18px;border-radius:50%;border:1.5px solid ${th.accent};background:${th.paleBg};z-index:3;display:flex;align-items:center;justify-content:center;">
+          <div style="width:10px;height:10px;border-radius:50%;background:${th.accentLight};"></div>
+        </div>
+        <div style="position:absolute;bottom:-8px;left:-8px;width:18px;height:18px;border-radius:50%;border:1.5px solid ${th.accent};background:${th.paleBg};z-index:3;display:flex;align-items:center;justify-content:center;">
+          <div style="width:10px;height:10px;border-radius:50%;background:${th.accentLight};"></div>
+        </div>
+        <div style="position:absolute;bottom:-8px;right:-8px;width:18px;height:18px;border-radius:50%;border:1.5px solid ${th.accent};background:${th.paleBg};z-index:3;display:flex;align-items:center;justify-content:center;">
+          <div style="width:10px;height:10px;border-radius:50%;background:${th.accentLight};"></div>
+        </div>
+      </div>
+      <div style="font-family:'Playfair Display',serif;font-size:16px;color:${th.darkText};margin-top:16px;text-align:center;">${tag}</div>
+      <div style="font-family:'Montserrat',sans-serif;font-size:8px;color:${th.darkText};text-align:center;margin-top:6px;line-height:1.6;opacity:0.8;">${txt}</div>
+    </div>`;
+
+  // ── T8: POLAROID JOY ─────────────────────────────────────────
+  if (id === 8) return `
+    <div style="width:100%;height:100%;background:${th.paleBg};padding:10px;display:flex;flex-direction:column;align-items:center;overflow:hidden;">
+      <div style="background:${th.cardBg};padding:4px 4px 14px;box-shadow:0 3px 10px rgba(0,0,0,0.1);transform:rotate(-2deg);width:80%;margin-top:4px;flex-shrink:0;">
+        <div style="width:100%;height:75px;background:#eee;overflow:hidden;">
+          <img src="${FEMALE}" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"/>
+        </div>
+      </div>
+      <div style="font-family:'Caveat',cursive;font-size:16px;color:${th.darkText};margin-top:10px;text-align:center;">${tag}!</div>
+      <div style="font-family:'Nunito',sans-serif;font-size:7px;color:${th.darkText};text-align:center;margin-top:4px;line-height:1.4;padding:0 6px;opacity:0.8;">${txt}</div>
+    </div>`;
+
+  // ── T9: LETTER ────────────────────────────────────────────────
+  if (id === 9) return `
+    <div style="width:100%;height:100%;background:${th.paleBg};padding:14px;position:relative;overflow:hidden;">
+      <div style="position:absolute;inset:8px;border:1px solid ${th.accentLight};pointer-events:none;"></div>
+      <svg viewBox="0 0 50 150" fill="none" style="position:absolute;right:6px;top:26%;width:26px;height:85px;opacity:0.8;"><path d="M25,130 C25,130 25,30 25,10" stroke="${th.accent}" stroke-width="1.5"/><circle cx="25" cy="25" r="3" fill="${th.accent}"/><circle cx="22" cy="30" r="2.5" fill="${th.accent}"/><circle cx="28" cy="35" r="2.5" fill="${th.accent}"/><circle cx="20" cy="40" r="2.5" fill="${th.accent}"/><circle cx="30" cy="45" r="2.5" fill="${th.accent}"/><circle cx="22" cy="50" r="2.5" fill="${th.accent}"/><circle cx="28" cy="55" r="2.5" fill="${th.accent}"/><circle cx="25" cy="60" r="2.5" fill="${th.accent}"/><circle cx="25" cy="68" r="2" fill="${th.accent}"/><circle cx="25" cy="78" r="2" fill="${th.accent}"/><circle cx="25" cy="88" r="1" fill="${th.accent}"/><circle cx="25" cy="98" r="0.5" fill="${th.accent}"/></svg>
+      <div style="font-family:'Caveat',cursive;font-size:11px;color:${th.darkText};opacity:0.6;margin-bottom:5px;">${new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</div>
+      <div style="font-family:'Caveat',cursive;font-size:22px;font-weight:500;color:${th.darkText};margin-bottom:8px;margin-top:4px;">Dear Friend,</div>
+      <div style="font-family:'Caveat',cursive;font-size:11px;line-height:1.75;color:${th.darkText};max-width:82%;opacity:0.9;">${txt}</div>
+    </div>`;
+
+  // ── T10: EXTENDED TEXT VINTAGE POLAROID ─────────────────────
+  if (id === 10) return `
+    <div style="width:100%;height:100%;background:${th.paleBg};display:flex;flex-direction:column;align-items:center;padding:10px;overflow:hidden;">
+      <div style="width:70%;padding:4px 4px 12px;background:${th.cardBg};box-shadow:0 3px 10px rgba(0,0,0,0.08);transform:rotate(2deg);margin-bottom:8px;overflow:hidden;flex-shrink:0;">
+        <img src="${MALE}" style="width:100%;height:60px;object-fit:cover;object-position:top;display:block;"/>
+      </div>
+      <div style="font-family:'Playfair Display',serif;font-size:12px;color:${th.darkText};margin-bottom:6px;width:100%;text-align:center;border-bottom:1px solid ${th.accentLight};padding-bottom:4px;">${tag}</div>
+      <div style="font-family:'Montserrat',sans-serif;font-size:6.5px;color:${th.darkText};line-height:1.5;text-align:justify;opacity:0.85;">${txt}</div>
+    </div>`;
+
+  // ── T11: EXTENDED TEXT FLORAL CIRCLE ───────────────────────
+  if (id === 11) return `
+    <div style="width:100%;height:100%;background:${th.paleBg};display:flex;flex-direction:column;padding:12px;overflow:hidden;position:relative;">
+      <div style="position:absolute;top:0;left:0;width:100%;height:30px;background:${th.accentLight};border-radius:0 0 50% 50%;"></div>
+      <div style="font-family:'Alex Brush',cursive;font-size:18px;color:${th.accent};text-align:center;margin-top:16px;z-index:2;">${tag}</div>
+      <div style="width:55px;height:55px;border-radius:50%;overflow:hidden;border:3px solid ${th.cardBg};box-shadow:0 3px 10px rgba(0,0,0,0.1);margin:6px auto;padding:0;flex-shrink:0;">
+        <img src="${FEMALE}" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"/>
+      </div>
+      <div style="font-family:'Montserrat',sans-serif;font-size:6.5px;color:${th.darkText};line-height:1.5;text-align:center;z-index:2;opacity:0.85;">${txt}</div>
+    </div>`;
+
+  return '';
+}
+
+function selectTemplate(id) {
+  localStorage.setItem('selectedTemplate', id);
+  window.location.href = 'myheartnotes-part2-v5.html';
+}
+
+init();
+</script>
+</body>
+</html>
