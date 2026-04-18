@@ -402,14 +402,14 @@ document.getElementById('tP').addEventListener('click',()=>{ if(cur>0) goTo(cur-
 document.getElementById('tN').addEventListener('click',()=>{ if(cur<2) goTo(cur+1); });
 document.getElementById('xBtn').addEventListener('click',()=>{
   localStorage.setItem('homepageSlide', '2');
-  window.history.back();
+  window.location.href = 'index.html';
 });
 
 // Slide 3 CTA — go back to homepage and auto-open the event picker on slide 3
 document.getElementById('s3CreateBtn').addEventListener('click',()=>{
   localStorage.setItem('homepageSlide', '2');
   localStorage.setItem('openEventPicker', 'true');
-  window.location.href = 'myheartnotes-homepage-3.html';
+  window.location.href = 'index.html';
 });
 
 goTo(0);
