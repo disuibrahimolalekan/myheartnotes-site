@@ -197,7 +197,7 @@ function getTplContent(tplId, ev) {
     wedding:     { 1:'Just Married', 2:'Just Married', 3:'Just Married', 4:'Just Married', 5:'Just Married', 6:'Just Married', 7:'Just Married', 8:'Just Married', 9:'Just Married', 10:'Just Married', 11:'Just Married' },
     newbaby:     { 1:'Welcome Baby', 2:'Welcome Baby', 3:'Welcome Baby', 4:'Welcome Baby', 5:'Welcome Baby', 6:'Welcome Baby', 7:'Welcome Baby', 8:'Welcome Baby', 9:'Welcome Baby', 10:'Welcome Baby', 11:'Welcome Baby' },
     promotion:   { 1:'Congratulations', 2:'Congratulations', 3:'Congratulations', 4:'Congratulations', 5:'Congratulations', 6:'Congratulations', 7:'Congratulations', 8:'Congratulations', 9:'Congratulations', 10:'Congratulations', 11:'Congratulations' },
-    thankyou:    { 1:'Thank You', 2:'So Grateful', 3:'I Appreciate You', 4:'Forever Grateful', 5:'Thank You', 6:'So Grateful', 7:'I Appreciate You', 8:'Forever Grateful', 9:'Thank You', 10:'So Grateful', 11:'I Appreciate You' },
+    thankyou:    { 1:'Thank You', 2:'Thank You', 3:'Thank You', 4:'Thank You', 5:'Thank You', 6:'Thank You', 7:'Thank You', 8:'Thank You', 9:'Thank You', 10:'Thank You', 11:'Thank You' },
     valentines:  { 1:'To My Soulmate', 2:'To My Soulmate', 3:'To My Soulmate', 4:'To My Soulmate', 5:'To My Soulmate', 6:'To My Soulmate', 7:'To My Soulmate', 8:'To My Soulmate', 9:'To My Soulmate', 10:'To My Soulmate', 11:'To My Soulmate' }
   };
 
@@ -436,7 +436,7 @@ function getPreview(id, ev) {
       <div style="position:absolute;inset:8px;border:1px solid ${th.accentLight};pointer-events:none;"></div>
       <svg viewBox="0 0 50 150" fill="none" style="position:absolute;right:6px;top:26%;width:26px;height:85px;opacity:0.8;"><path d="M25,130 C25,130 25,30 25,10" stroke="${th.accent}" stroke-width="1.5"/><circle cx="25" cy="25" r="3" fill="${th.accent}"/><circle cx="22" cy="30" r="2.5" fill="${th.accent}"/><circle cx="28" cy="35" r="2.5" fill="${th.accent}"/><circle cx="20" cy="40" r="2.5" fill="${th.accent}"/><circle cx="30" cy="45" r="2.5" fill="${th.accent}"/><circle cx="22" cy="50" r="2.5" fill="${th.accent}"/><circle cx="28" cy="55" r="2.5" fill="${th.accent}"/><circle cx="25" cy="60" r="2.5" fill="${th.accent}"/><circle cx="25" cy="68" r="2" fill="${th.accent}"/><circle cx="25" cy="78" r="2" fill="${th.accent}"/><circle cx="25" cy="88" r="1" fill="${th.accent}"/><circle cx="25" cy="98" r="0.5" fill="${th.accent}"/></svg>
       <div style="font-family:'Caveat',cursive;font-size:11px;color:${th.darkText};opacity:0.6;margin-bottom:5px;">${new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</div>
-      <div style="font-family:'Caveat',cursive;font-size:22px;font-weight:500;color:${th.darkText};margin-bottom:8px;margin-top:4px;">Dear Friend,</div>
+      <div style="font-family:'Caveat',cursive;font-size:22px;font-weight:500;color:${th.darkText};margin-bottom:8px;margin-top:4px;">${tag}</div>
       <div style="font-family:'Caveat',cursive;font-size:11px;line-height:1.75;color:${th.darkText};max-width:82%;opacity:0.9;">${txt}</div>
     </div>`;
 
